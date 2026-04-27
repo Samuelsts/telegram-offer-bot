@@ -1,0 +1,23 @@
+# Ambiente
+.env
+
+# Sessões do Telegram (CRÍTICO)
+*.session
+
+# Ambiente virtual
+venv/
+env/
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Chaves SSH (SEGURANÇA)
+*.key
