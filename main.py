@@ -1,15 +1,9 @@
-from telethon import TelegramClient, events
-from dotenv import load_dotenv
-import os
 import re
-import time
+import json
 import asyncio
-import random
-from collections import deque
-
-# ==========================
-# CONFIG
-# ==========================
+import os
+from dotenv import load_dotenv
+from telethon import TelegramClient, events
 
 load_dotenv()
 
@@ -18,179 +12,119 @@ api_hash = os.getenv("API_HASH")
 
 client = TelegramClient("session_bot", api_id, api_hash)
 
-# 🔎 Palavras-chave
-KEYWORDS = [
-    "notebook",
-    "ssd",
-    "monitor",
-    "ryzen",
-    "iphone",
-    "teclado"
-]
+# ==========================
+# CONFIG
+# ==========================
+def load_config():
+    with open("config.json", "r", encoding="utf-8") as f:
+        return json.load(f)
 
-# 🚫 Palavras a ignorar
-NEGATIVE = [
-    "usado",
-    "capinha",
-    "cabo"
-]
-
-# 💰 Faixa de preço
-PRICE_RULES = {
-    "teclado": (60, 120),
-    "ssd": (100, 400),
-    "notebook": (1500, 3000),
-    "monitor": (500, 900),
-    "iphone": (1000, 5000)
-}
-
-# 🧠 Controle
-seen_messages = set()
-
-# 🔐 Anti-ban
-LAST_SENT = 0
-MIN_INTERVAL = 15  # segundos entre mensagens
-
-message_queue = deque(maxlen=20)
-TIME_WINDOW = 60  # janela de tempo
-MAX_MSG = 5       # máximo por minuto
 
 # ==========================
-# FUNÇÕES
+# EXTRAIR PREÇOS (ROBUSTO)
 # ==========================
+def extrair_precos(texto):
+    padrao = r"r\$\s?\d{1,3}(?:\.\d{3})*(?:,\d{2})?|r\$\s?\d+"
+    matches = re.findall(padrao, texto.lower())
 
-def normalize(text):
-    if not text:
-        return ""
-    text = re.sub(r'\s+', ' ', text)
-    return text.lower().strip()
-
-def extract_prices(text):
-    matches = re.findall(r'R\$\s*([\d\.]+,\d{2}|[\d\.]+)', text, re.IGNORECASE)
-
-    prices = []
+    valores = []
     for m in matches:
+        num = m.replace("r$", "").strip()
+        num = num.replace(".", "").replace(",", ".")
         try:
-            clean = m.replace(".", "").replace(",", ".")
-            prices.append(float(clean))
+            valores.append(float(num))
         except:
             continue
 
-    return prices
+    return valores
 
-def keyword_match(text):
-    return any(re.search(rf"\b{k}\b", text) for k in KEYWORDS)
 
-def negative_match(text):
-    return any(n in text for n in NEGATIVE)
-
-def can_send():
-    now = time.time()
-    message_queue.append(now)
-    recent = [t for t in message_queue if now - t < TIME_WINDOW]
-    return len(recent) <= MAX_MSG
-
-def get_price_match_info(text):
-    prices = extract_prices(text)
-
-    if not prices:
-        return False, None, []
-
-    for keyword, (min_price, max_price) in PRICE_RULES.items():
-        if keyword in text:
-            for price in prices:
-                if min_price <= price <= max_price:
-                    return True, (min_price, max_price), prices
-            return False, (min_price, max_price), prices
-
-    return False, None, prices
-
-async def safe_send(client, message):
-    global LAST_SENT
-
-    now = time.time()
-    diff = now - LAST_SENT
-
-    if diff < MIN_INTERVAL:
-        wait = MIN_INTERVAL - diff
-        print(f"⏳ Aguardando {wait:.1f}s...")
-        await asyncio.sleep(wait)
-
-    if not can_send():
-        print("🚫 Limite de mensagens por minuto atingido")
-        return
-
-    await asyncio.sleep(random.uniform(1, 3))  # delay humano
-
+# ==========================
+# OBTER NOME DO GRUPO
+# ==========================
+def get_origem(event):
     try:
-        await client.send_message("me", message)
-        LAST_SENT = time.time()
-    except Exception as e:
-        print("❌ Erro ao enviar:", e)
+        if event.is_group or event.is_channel:
+            return event.chat.title
+        return "Privado"
+    except:
+        return "Desconhecido"
+
 
 # ==========================
-# EVENTO
+# HANDLER
 # ==========================
-
 @client.on(events.NewMessage)
 async def handler(event):
-    raw_text = event.raw_text or ""
-    text = normalize(raw_text)
+    try:
+        texto_original = event.raw_text
+        texto = texto_original.lower()
 
-    if not text:
-        return
+        config = load_config()
+        filtros = config["filtros"]
 
-    chat_name = event.chat.title if event.chat else "Privado"
+        for filtro in filtros:
+            nome = filtro["nome"]
+            keywords = filtro["keywords"]
+            min_price = filtro["min"]
+            max_price = filtro["max"]
 
-    print(f"📩 [{chat_name}] {text}")
+            # keyword match (case insensitive)
+            if not any(k.lower() in texto for k in keywords):
+                continue
 
-    if text in seen_messages:
-        return
+            precos = extrair_precos(texto_original)
 
-    if keyword_match(text) and not negative_match(text):
-        valid, faixa, prices = get_price_match_info(text)
+            if not precos:
+                continue
 
-        if not valid:
-            return
+            dentro_faixa = [
+                p for p in precos if min_price <= p <= max_price
+            ]
 
-        seen_messages.add(text)
+            if not dentro_faixa:
+                continue
 
-        # 🔗 Link
-        link = ""
-        try:
-            if hasattr(event.chat, "username") and event.chat.username:
-                link = f"https://t.me/{event.chat.username}/{event.id}"
-            else:
-                link = f"https://t.me/c/{event.chat_id}/{event.id}"
-        except:
+            origem = get_origem(event)
+
             link = ""
+            if event.chat and getattr(event.chat, "username", None):
+                link = f"https://t.me/{event.chat.username}/{event.id}"
 
-        # 🎯 Faixa
-        faixa_str = f"🎯 Faixa considerada: R$ {faixa[0]} - R$ {faixa[1]}"
-
-        # 💰 Preços
-        prices_str = ", ".join([f"R$ {p:.2f}" for p in prices])
-
-        msg = f"""
+            mensagem = f"""
 🚨 OFERTA DETECTADA
 
-📍 Origem: {chat_name}
-{faixa_str}
+📍 Origem: {origem}
+🎯 Filtro: {nome}
+💰 Faixa definida: ({min_price}, {max_price})
 
-💬 {raw_text[:300]}
+💬 {texto_original}
 
-💰 Preços encontrados: {prices_str}
+💰 Preços encontrados: {', '.join([f'R$ {p:.2f}' for p in precos])}
+
+🔗 {link}
 """
 
-        if link:
-            msg += f"\n🔗 Link: {link}"
+            print(mensagem)
 
-        await safe_send(client, msg)
+            # envia pra você mesmo
+            await client.send_message("me", mensagem)
+
+            # anti-spam / anti-ban
+            await asyncio.sleep(2)
+
+    except Exception as e:
+        print("Erro:", e)
+
 
 # ==========================
 # START
 # ==========================
+async def main():
+    print("🚀 Bot rodando com proteção anti-ban...")
+    await client.start()
+    await client.run_until_disconnected()
 
-print("🚀 Bot rodando com proteção anti-ban...")
-client.start()
-client.run_until_disconnected()
+
+if __name__ == "__main__":
+    asyncio.run(main())

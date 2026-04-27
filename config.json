@@ -1,0 +1,16 @@
+{
+  "filtros": [
+    {
+      "nome": "monitor",
+      "keywords": ["monitor", "tela"],
+      "min": 500,
+      "max": 1500
+    },
+    {
+      "nome": "teclado",
+      "keywords": ["teclado", "keyboard"],
+      "min": 50,
+      "max": 300
+    }
+  ]
+}
