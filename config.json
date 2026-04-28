@@ -1,16 +1,39 @@
 {
   "filtros": [
     {
-      "nome": "monitor",
-      "keywords": ["monitor", "tela"],
-      "min": 500,
-      "max": 1500
+      "nome": "filtro de linha",
+      "keywords": [
+        "iclamper Energia 8",
+        "filtro de linha 8 tomadas clamper",
+        "Filtro de Linha 8 Tomadas 3 Pinos 10A iClamper",
+        "filtro de linha com dps iclamper energia 8"
+      ],
+      "min": 40,
+      "max": 100
     },
     {
       "nome": "teclado",
-      "keywords": ["teclado", "keyboard"],
+      "keywords": [
+        "Combo Teclado e Mouse sem fio Logitech MK220 Layout ABNT2",
+        "Teclado e Mouse sem fio Logitech MK220",
+        "Logitech MK220",
+        "Kit Teclado E Mouse Logitech Sem Fio Mk220"
+      ],
       "min": 50,
-      "max": 300
+      "max": 99
+    },
+    {
+      "nome": "teclado mecanico",
+      "keywords": [
+        "AULA F87",
+        "Aula F99",
+        "Attack Shark X85pro",
+        "AulaF99",
+        "AULAF87",
+        "Attack Shark X98 Pro"
+      ],
+      "min": 100,
+      "max": 250
     }
   ]
 }
