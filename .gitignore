@@ -20,4 +20,4 @@ __pycache__/
 Thumbs.db
 
 # Chaves SSH (SEGURANÇA)
-*.key
+*.key"config.json" 
