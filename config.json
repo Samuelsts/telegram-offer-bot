@@ -6,34 +6,40 @@
         "iclamper Energia 8",
         "filtro de linha 8 tomadas clamper",
         "Filtro de Linha 8 Tomadas 3 Pinos 10A iClamper",
-        "filtro de linha com dps iclamper energia 8"
+        "filtro de linha com dps iclamper energia 8",
+        "Filtro de Linha iCLAMPER Energia 8 com Proteção contra Surtos Elétricos(DPS) 8 Tomadas",
+        "filtro de linha clamper 8 tomadas com dps 1m preto",
+        "filtro de linha com dps iclamper energia 8 tomadas régua com tecnologia lcf",
+        "filtro de linha iclamper energia 8 com proteção contra surtos elétricos(dps) 8 tomada",
+        "filtro de linha 8 tomadas clamper",
+        "iclamper 8 tomadas"
       ],
       "min": 40,
       "max": 100
     },
     {
-      "nome": "teclado",
+      "nome": "WD-40",
       "keywords": [
-        "combo teclado e mouse sem fio logitech mk220 layout abnt2",
-        "teclado e mouse sem fio logitech mk220",
-        "logitech mk220",
-        "kit teclado e mouse logitech sem fio mk220"
+        "wd-40 produto multiusos",
+        "wd 40 desengripante lubrificante multiuso spray 300ml",
+        "wd-40 óleo lubrificante desengripante",
+        "wd 40",
+        "wd-40"
       ],
-      "min": 50,
-      "max": 99
+      "min": 10,
+      "max": 50
     },
     {
-      "nome": "teclado mecanico",
+      "nome": "Motul C2",
       "keywords": [
-        "aula f87",
-        "aula f99",
-        "attack shark x85pro",
-        "aulaf99",
-        "aulaf87",
-        "attack shark x98 pro"
+        "lubrificante de corrente motul c2+ plus road 200ml",
+        "graxa lubrificante corrente motul - c2 plus",
+        "lubrificante de corrente motul c2",
+        "motul c2+ plus",
+        "motul c2"
       ],
-      "min": 100,
-      "max": 250
+      "min": 15,
+      "max": 39
     }
   ]
 }
