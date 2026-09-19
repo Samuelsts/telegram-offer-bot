@@ -10,6 +10,9 @@ load_dotenv()
 api_id = int(os.getenv("API_ID"))
 api_hash = os.getenv("API_HASH")
 
+DESTINO_CHAT = -1004442860346
+
+
 client = TelegramClient("session_bot", api_id, api_hash)
 
 # ==========================
@@ -108,7 +111,7 @@ async def handler(event):
             print(mensagem)
 
             # envia pra você mesmo
-            await client.send_message("me", mensagem)
+            await client.send_message(DESTINO_CHAT, mensagem)
 
             # anti-spam / anti-ban
             await asyncio.sleep(2)
@@ -123,6 +126,7 @@ async def handler(event):
 async def main():
     print("🚀 Bot rodando com proteção anti-ban...")
     await client.start()
+    await client.get_dialogs()  # popula cache de entidades (fix peer invalido)
     await client.run_until_disconnected()
 
 
