@@ -15,60 +15,60 @@
         "iclamper 8 tomadas"
       ],
       "min": 40,
-      "max": 100
+      "max": 90
     },
-	{
- 	 "nome": "Aparador de Pelos Mondial Super Groom",
- 	 "keywords": [
-   	 "super groom 6",
-         "Aparador de Pelos Super Groom 10, Mondial, Preto/Azul, 6W, Bivolt - BG-03",
-   	 "supergroom 6",
-   	 "mondial super groom 6",
-   	 "mondial supergroom 6",
-   	 "aparador mondial bg-04",
-   	 "aparador mondial bg04",
-   	 "aparador de pelos mondial super groom 6",
-   	 "aparador de pelos mondial super groom 6 bg-04",
-   	 "aparador de pelos mondial super groom 6 bg 04",
-   	 "aparador de pelos 6 em 1 mondial",
-   	 "barbeador mondial super groom 6",
-   	 "super groom 10",
-   	 "supergroom 10",
-   	 "mondial super groom 10",
-   	 "mondial supergroom 10",
-   	 "aparador mondial bg-03",
-   	 "aparador mondial bg03",
-   	 "aparador de pelos mondial super groom 10",
-   	 "aparador de pelos mondial super groom 10 bg-03",
-   	 "aparador de pelos mondial super groom 10 bg 03",
-   	 "aparador de pelos mondial 10 em 1",
-   	 "aparador 10 em 1 mondial",
-   	 "barbeador mondial super groom 10"
- 	 ],
- 	 "min": 40,
- 	 "max": 89
-	},
+    {
+      "nome": "Aparador de Pelos Mondial Super Groom",
+      "keywords": [
+        "super groom 6",
+        "Aparador de Pelos Super Groom 10, Mondial, Preto/Azul, 6W, Bivolt - BG-03",
+        "supergroom 6",
+        "mondial super groom 6",
+        "mondial supergroom 6",
+        "aparador mondial bg-04",
+        "aparador mondial bg04",
+        "aparador de pelos mondial super groom 6",
+        "aparador de pelos mondial super groom 6 bg-04",
+        "aparador de pelos mondial super groom 6 bg 04",
+        "aparador de pelos 6 em 1 mondial",
+        "barbeador mondial super groom 6",
+        "super groom 10",
+        "supergroom 10",
+        "mondial super groom 10",
+        "mondial supergroom 10",
+        "aparador mondial bg-03",
+        "aparador mondial bg03",
+        "aparador de pelos mondial super groom 10",
+        "aparador de pelos mondial super groom 10 bg-03",
+        "aparador de pelos mondial super groom 10 bg 03",
+        "aparador de pelos mondial 10 em 1",
+        "aparador 10 em 1 mondial",
+        "barbeador mondial super groom 10"
+      ],
+      "min": 40,
+      "max": 89
+    },
     {
       "nome": "WD-40",
       "keywords": [
         "wd-40 produto multiusos",
-	      "wd 40 desengripante lubrificante multiuso spray 300ml ",
-	      "wd-40 óleo lubrificante desengripante",
-	      "wd 40",
-	      "wd-40"
+        "wd 40 desengripante lubrificante multiuso spray 300ml ",
+        "wd-40 óleo lubrificante desengripante",
+        "wd 40",
+        "wd-40"
       ],
       "min": 10,
       "max": 50
     },
-     {
+    {
       "nome": "Projetores",
       "keywords": [
-       	      "Magcubic HY350",
-              "HY350",
-              "Magcubic HY320",
-              "Magcubic l018",
-	      "Bettdow AC1094",
-              "Bettdow AC1093"
+        "Magcubic HY350",
+        "HY350",
+        "Magcubic HY320",
+        "Magcubic l018",
+        "Bettdow AC1094",
+        "Bettdow AC1093"
       ],
       "min": 150,
       "max": 500
@@ -76,32 +76,32 @@
     {
       "nome": "Placas de Video",
       "keywords": [
-       	      "RTX 3060",
-"RTX3060",
-"RTX 3060 12GB",
-"RTX3060 12GB",
-"NVIDIA GeForce RTX 3060",
-"RTX 4060",
-"RTX4060",
-"RTX 4060 8GB",
-"RTX4060 8GB",
-"NVIDIA GeForce RTX 4060",
-"RTX 3050",
-"RTX3050",
-"RTX 3050 8GB",
-"RTX 3050 6GB",
-"NVIDIA GeForce RTX 3050",
-"RTX 5060",
-"RTX5060",
-"RTX 5060 8GB",
-"RTX5060 8GB",
-"NVIDIA GeForce RTX 5060",
-"RX 7600 XT",
-"RX7600 XT",
-"RX7600XT",
-"RX 7600 XT 16GB",
-"RX7600XT 16GB",
-"AMD Radeon RX 7600 XT"
+        "RTX 3060",
+        "RTX3060",
+        "RTX 3060 12GB",
+        "RTX3060 12GB",
+        "NVIDIA GeForce RTX 3060",
+        "RTX 4060",
+        "RTX4060",
+        "RTX 4060 8GB",
+        "RTX4060 8GB",
+        "NVIDIA GeForce RTX 4060",
+        "RTX 3050",
+        "RTX3050",
+        "RTX 3050 8GB",
+        "RTX 3050 6GB",
+        "NVIDIA GeForce RTX 3050",
+        "RTX 5060",
+        "RTX5060",
+        "RTX 5060 8GB",
+        "RTX5060 8GB",
+        "NVIDIA GeForce RTX 5060",
+        "RX 7600 XT",
+        "RX7600 XT",
+        "RX7600XT",
+        "RX 7600 XT 16GB",
+        "RX7600XT 16GB",
+        "AMD Radeon RX 7600 XT"
       ],
       "min": 700,
       "max": 1850
@@ -113,8 +113,7 @@
         "Lava Louças",
         "Lava-Louças Portátil Praxis",
         "Lava Loucas Portatil",
-	"Lava Loucas"
-
+        "Lava Loucas"
       ],
       "min": 300,
       "max": 850
@@ -122,16 +121,16 @@
     {
       "nome": "Motul C2",
       "keywords": [
-	    "lubrificante de corrente motul c2+ plus road 200ml",
-	    "graxa lubrificante corrente motul - c2 plus ",
-	    "lubrificante de corrente motul c2",
-	    "motul c2+ plus",
-	    "motul c2"
+        "lubrificante de corrente motul c2+ plus road 200ml",
+        "graxa lubrificante corrente motul - c2 plus ",
+        "lubrificante de corrente motul c2",
+        "motul c2+ plus",
+        "motul c2"
       ],
       "min": 15,
       "max": 39
-    }
-    ,{
+    },
+    {
       "nome": "Kabum Smart K800",
       "keywords": [
         "kabum smart k800",
@@ -201,40 +200,39 @@
         "aspirador robo electrolux erb30",
         "electrolux home-e power erb30",
         "erb30 electrolux",
- 	"Aspirador de po robo Electrolux 2h20min controle remoto base carregamento bateria longa duração automatico varre aspira passa pano ERB30 bivolt preto sensor antiqueda"
+        "Aspirador de po robo Electrolux 2h20min controle remoto base carregamento bateria longa duração automatico varre aspira passa pano ERB30 bivolt preto sensor antiqueda"
       ],
       "min": 400,
       "max": 790
     },
-{
-  "nome": "Electrolux ERB61",
-  "keywords": [
-    "electrolux erb61",
-    "electrolux erb 61",
-    "erb61",
-    "erb 61",
-    "robô aspirador electrolux erb61",
-    "robo aspirador electrolux erb61",
-    "robô aspirador electrolux erb 61",
-    "robo aspirador electrolux erb 61",
-    "electrolux robô aspirador erb61",
-    "electrolux robo aspirador erb61",
-    "electrolux 4 em 1 erb61",
-    "electrolux 4 em 1 erb 61",
-    "robô aspirador 4 em 1 electrolux erb61",
-    "robo aspirador 4 em 1 electrolux erb61",
-    "robô aspirador electrolux wi-fi erb61",
-    "robo aspirador electrolux wifi erb61",
-    "robô aspirador electrolux mapeamento erb61",
-    "robo aspirador electrolux mapeamento erb61",
-    "electrolux experience erb61",
-    "electrolux experience erb 61",
-    "Robô Aspirador Electrolux 4 em 1 Wi-Fi Experience Mapeamento Cinza Bivolt",
-    "Robô Aspirador Electrolux 4 em 1 Wi-Fi"
-  ],
-  "min": 1000,
-  "max": 1200
-}
+    {
+      "nome": "Electrolux ERB61",
+      "keywords": [
+        "electrolux erb61",
+        "electrolux erb 61",
+        "erb61",
+        "erb 61",
+        "robô aspirador electrolux erb61",
+        "robo aspirador electrolux erb61",
+        "robô aspirador electrolux erb 61",
+        "robo aspirador electrolux erb 61",
+        "electrolux robô aspirador erb61",
+        "electrolux robo aspirador erb61",
+        "electrolux 4 em 1 erb61",
+        "electrolux 4 em 1 erb 61",
+        "robô aspirador 4 em 1 electrolux erb61",
+        "robo aspirador 4 em 1 electrolux erb61",
+        "robô aspirador electrolux wi-fi erb61",
+        "robo aspirador electrolux wifi erb61",
+        "robô aspirador electrolux mapeamento erb61",
+        "robo aspirador electrolux mapeamento erb61",
+        "electrolux experience erb61",
+        "electrolux experience erb 61",
+        "Robô Aspirador Electrolux 4 em 1 Wi-Fi Experience Mapeamento Cinza Bivolt",
+        "Robô Aspirador Electrolux 4 em 1 Wi-Fi"
+      ],
+      "min": 1000,
+      "max": 1200
+    }
   ]
 }
-
