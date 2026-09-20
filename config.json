@@ -155,6 +155,18 @@
       "min": 600,
       "max": 1150
     },
+     {
+      "nome": "Xiaomi",
+      "keywords": [
+        "Robo Aspirador De Pó Inteligente S40c Xiaomi Branco BIVOLT",
+        "robo aspirador S40c Xiaomi",
+        "robo aspirador e passa pano S40",
+        "aspirador robo xiaomi",
+        "kabum k800"
+      ],
+      "min": 600,
+      "max": 1100
+    },
     {
       "nome": "Kabum Smart K900",
       "keywords": [
@@ -163,7 +175,7 @@
         "robo aspirador e passa pano kabum smart k900",
         "aspirador robo kabum k900",
         "kabum k900",
-        "Robô Aspirador e Passa Pano KABUM! smart 900 - 5 Modos de Limpeza, Base 2 em 1, Mapeamento 3D "
+        "Robo Aspirador e Passa Pano KABUM! smart 900 - 5 Modos de Limpeza, Base 2 em 1, Mapeamento 3D "
       ],
       "min": 700,
       "max": 950
@@ -225,7 +237,7 @@
         "electrolux erb 61",
         "erb61",
         "erb 61",
-        "robô aspirador electrolux erb61",
+        "robo aspirador electrolux erb61",
         "robo aspirador electrolux erb61",
         "robô aspirador electrolux erb 61",
         "robo aspirador electrolux erb 61",
@@ -233,7 +245,7 @@
         "electrolux robo aspirador erb61",
         "electrolux 4 em 1 erb61",
         "electrolux 4 em 1 erb 61",
-        "robô aspirador 4 em 1 electrolux erb61",
+        "robo aspirador 4 em 1 electrolux erb61",
         "robo aspirador 4 em 1 electrolux erb61",
         "robô aspirador electrolux wi-fi erb61",
         "robo aspirador electrolux wifi erb61",
@@ -244,7 +256,7 @@
         "Robô Aspirador Electrolux 4 em 1 Wi-Fi Experience Mapeamento Cinza Bivolt",
         "Robô Aspirador Electrolux 4 em 1 Wi-Fi"
       ],
-      "min": 1000,
+      "min": 600,
       "max": 1200
     }
   ]
