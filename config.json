@@ -61,19 +61,6 @@
       "max": 50
     },
     {
-      "nome": "Creatina",
-      "keywords": [
-        "Creatina Monohidratado Pura 600g Dark Lab",
-        "Creatina Monohidratada Sem Sabor - Pote 300g ",
-        "Creatina Monohidratada 250g Growth Supplements e",
-        "Creatina Monohidratada ",
-        "Creatina",
-        "Creatina Monohidratada Pura"
-      ],
-      "min": 10,
-      "max": 30
-    },
-    {
       "nome": "Projetores",
       "keywords": [
         "Magcubic HY350",
@@ -155,7 +142,7 @@
       "min": 600,
       "max": 1150
     },
-     {
+    {
       "nome": "Xiaomi",
       "keywords": [
         "Robo Aspirador De Pó Inteligente S40c Xiaomi Branco BIVOLT",
